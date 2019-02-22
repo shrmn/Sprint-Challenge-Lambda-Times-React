@@ -21,6 +21,7 @@ export default class Content extends Component {
     this.setState({
       tabs: tabData,
       cards: cardData
+
     })
   }
 
@@ -28,7 +29,7 @@ export default class Content extends Component {
     // this function should take in the tab and update the state with the new tab.
   };
 
-  filterCards = () => {
+  filterCards = (e) => {
     /* Right now this function only returns the cards on state.
       We're going to make this function more dynamic
       by using it to filter out our cards for when a tab is selcted
@@ -41,17 +42,13 @@ export default class Content extends Component {
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
+   
     return this.state.cards;
   };
 
   render() {
     return (
       <div className="content-container">
-        {/* 
-          Add 2 props to the Tabs component, 
-          `selectedTab` that includes the currently selected tab
-          and `selectTabHandler` that includes the function to change the selected tab
-        */}
         <Tabs
         selectedTab={this.state.selected}
         selecteTabHandler={this.selectTabHandler}
